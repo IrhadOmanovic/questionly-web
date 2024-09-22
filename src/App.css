@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ripple {
+  position: absolute;
+  border-radius: 9999px; /* Full circle */
+  background: hsl(var(--primary)); /* Ripple color */
+  animation: ripple-animation 0.6s linear;
+  transform: scale(0);
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@layer base {
+  html[data-theme='default'] {
+    /* Colors */
+    --primary: 0 85% 37%; /* #B90E0D */
+    --primary-foreground: 0 0% 100%; /* #ffffff */
+
+    --background: 0 3% 94%; /* #f9f9f9 */
+    --foreground: 0 0% 10%; /* #1a1a1a */
+
+    --card: 0 3% 94%; /* #ffffff */
+    --card-foreground: 0 0% 15%; /* #262626 */
+
+    --popover: 0 3% 94%; /* #ffffff */
+    --popover-foreground: 0 0% 15%; /* #262626 */
+
+    --secondary: 0 87% 31%; /* #9E0C0B */
+    --secondary-foreground: 0 0% 100%; /* #ffffff */
+
+    --muted: 0 0% 90%; /* #e5e5e5 */
+    --muted-foreground: 0 0% 45%; /* #737373 */
+
+    --accent: 0 87% 47%; /* #C11211 (Darker Red for accents) */
+    --accent-foreground: 0 0 100%; /* #ffffff */
+
+    --destructive: 0 75% 50%; /* #E53E3E (Bright red for destructive actions) */
+    --destructive-foreground: 0 0% 100%; /* #ffffff */
+
+    --border: 0 6% 51%; /* #cccccc */
+    --input: 0 5% 65%; /* #f9f9f9 */
+    --ring: 0 85% 37%; /* Same as primary color */
+
+    --chart-1: 0 70% 40%; /* #a82c2c (Dark red) */
+    --chart-2: 0 60% 50%; /* #b33a3a (Slightly lighter red) */
+    --chart-3: 0 50% 55%; /* #bf4949 (Medium red) */
+    --chart-4: 0 40% 60%; /* #cc5858 (Lighter red) */
+    --chart-5: 0 30% 65%; /* #d76767 (Soft red) */
+  }
+
+  html[data-theme='dark'] {
+    /* Colors */
+    --primary: 0 85% 37%; /* #B90E0D */
+    --primary-foreground: 0 0% 100%; /* #ffffff */
+
+    --background: 0 7% 11; /* #1a1a1a */
+    --foreground: 0 0% 100%; /* #ffffff */
+
+    --card: 0 7% 11; /* #262626 */
+    --card-foreground: 0 0% 100%; /* #ffffff */
+
+    --popover: 0 7% 11; /* #262626 */
+    --popover-foreground: 0 0% 100%; /* #ffffff */
+
+    --secondary: 0 70% 44%; /* #9E0C0B */
+    --secondary-foreground: 0 0% 100%; /* #ffffff */
+
+    --muted: 0 0% 25%; /* #3f3f3f */
+    --muted-foreground: 0 0% 70%; /* #b3b3b3 */
+
+    --accent: 0 80% 50%; /* #C11211 */
+    --accent-foreground: 0 0% 100%; /* #ffffff */
+
+    --destructive: 0 75% 50%; /* #E53E3E */
+    --destructive-foreground: 0 0% 100%; /* #ffffff */
+
+    --border: 0 0% 30%; /* #4d4d4d */
+    --input: 0 0% 15%; /* #262626 */
+    --ring: 0 85% 37%; /* Same as primary color */
+
+    --chart-1: 0 70% 40%; /* #a82c2c */
+    --chart-2: 0 60% 50%; /* #b33a3a */
+    --chart-3: 0 50% 55%; /* #bf4949 */
+    --chart-4: 0 40% 60%; /* #cc5858 */
+    --chart-5: 0 30% 65%; /* #d76767 */
+  }
+}

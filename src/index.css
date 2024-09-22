@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Gropled';
+  src: url('/src/assets/fonts/Gropled.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: 'Playwrite DE Grund', cursive;
+  color-scheme: light dark;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
