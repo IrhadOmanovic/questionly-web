@@ -16,7 +16,6 @@ export const useRippleEffect = (ref: React.RefObject<HTMLElement>) => {
       circle.classList.add('ripple');
 
       const ripple = button.getElementsByClassName('ripple')[0];
-      console.log(ripple);
 
       if (ripple) {
         ripple.remove();

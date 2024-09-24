@@ -3,6 +3,7 @@ import * as TabsPrimitive from '@radix-ui/react-tabs';
 
 import { cn } from '@/lib/utils';
 import { useRippleEffect } from '@/lib/hooks/useRippleEffect';
+import { cva } from 'class-variance-authority';
 
 const Tabs = TabsPrimitive.Root;
 
@@ -13,13 +14,17 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      'inline-flex items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground rounded-full w-full gap-2',
+      'inline-flex items-center justify-center rounded-lg bg-card p-1 text-muted-foreground rounded-full w-full gap-2 transition-all',
       className,
     )}
     {...props}
   />
 ));
 TabsList.displayName = TabsPrimitive.List.displayName;
+
+export const tabsTriggerStyle = cva(
+  'w-fill grow shrink relative overflow-hidden hover:bg-card inline-flex items-center justify-center whitespace-nowrap rounded-full p-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow',
+);
 
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
@@ -32,10 +37,7 @@ const TabsTrigger = React.forwardRef<
   return (
     <TabsPrimitive.Trigger
       ref={buttonRef}
-      className={cn(
-        'w-fill grow shrink relative overflow-hidden hover:bg-background inline-flex items-center justify-center whitespace-nowrap rounded-full p-3 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow',
-        className,
-      )}
+      className={cn(tabsTriggerStyle(), className)}
       {...props}
     />
   );

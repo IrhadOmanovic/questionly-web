@@ -1,12 +1,13 @@
 @font-face {
-  font-family: 'Gropled';
-  src: url('/src/assets/fonts/Gropled.otf') format('opentype');
+  font-family: 'PlaypenSans';
+  src: url('/src/assets/fonts/PlaypenSans.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
-  font-family: 'Playwrite DE Grund', cursive;
+  font-family: 'Montserrat Alternates', 'PlaypenSans', cursive;
+  font-weight: 400;
   color-scheme: light dark;
   color: hsl(var(--foreground));
   background: hsl(var(--background));
